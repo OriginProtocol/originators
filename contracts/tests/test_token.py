@@ -1,4 +1,4 @@
-"""token.cairo test file."""
+"""Test token.cairo ERC1155-like contract."""
 import os
 
 import pytest
@@ -25,23 +25,10 @@ ACCOUNT_CONTRACT_FILE = os.path.join(
 OWNER = 0x0339A8EBF38CE2950EC4B7027A179DBA328CD883F2E54DC0FABA2884269D970B
 E_18 = int(1e18)
 
-"""
-Utility functions that probably shouldn't need to be reinvented by every damned project
-"""
-
-
-# def str_to_felt(text):
-#     b_text = bytes(text, "ascii")
-#     return int.from_bytes(b_text, "big")
-
 
 def felt_to_str(felt):
     b_val = felt.to_bytes(felt.bit_length() + 7 // 8, "big")
     return b_val.lstrip(b"\x00").decode("ascii")
-
-
-# def to_uint(a):
-#     return (a & ((1 << 128) - 1), a >> 128)
 
 
 @pytest.fixture(scope="session", autouse=True)
