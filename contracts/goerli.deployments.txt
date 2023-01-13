@@ -1,0 +1,2 @@
+0x03d07798112442e84a1b460d96efa601992e3186b33e1e9070a093fceaf5dc2b:/home/mike/.venvs/cartquarter/lib/python3.9/site-packages/nile/artifacts/abis/Account.json:DEPLOYER
+0x035aeae2de3c0193b3a1139c669254d357b02a747f01735adfa7a111096ff232:artifacts/abis/token.json:originators
