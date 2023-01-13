@@ -1,12 +1,12 @@
-# Originators
+# Cart Quarter
 
-An NFT collection of Origin's Originators with dynamic mint and burn pricing.
+An NFT collection of The Originators with dynamic mint and burn pricing.
 
 ## Introduction
 
 Loosely inspired by [shopping cart rental locks](https://lakevoicenews.org/quarter-for-a-cart-the-real-reason-you-need-a-quarter-for-your-shopping-cart-at-aldi-80fbe9233809), NFT “rentals” (or sales with the option to burn) can be made by depositing tokens and receiving your NFT. Dynamic pricing seems to be a natural supply and demand regulator as well as being a method of asset pricing.  Giving the users the ability to burn the tokens for tokens also give the users options for reasonable refunds, resulting in less of a chance of buyers remorse while also allowing the token supply to naturally reduce if demand is reduced.
 
-The pricing model of this implementation will be based on a [Sigmoid bonding curve](https://en.wikipedia.org/wiki/Sigmoid_function) (TODO?).  This should reward early investors while leveling out at a target price.  Another good option would be a quadratic curve which would favor a target max supply of the token.  (Perhaps this contract could have optional calculations?  linear?)
+The pricing model of this implementation will be linear but a [Sigmoid bonding curve](https://en.wikipedia.org/wiki/Sigmoid_function) is also compelling.  This should reward early investors while leveling out at a target price.  Another good option would be a quadratic curve which would favor a target max supply of the token.
 
 
 
@@ -25,6 +25,38 @@ Dynamic pricing will be done using a bonding curve (TOOD: Multiple options?).  I
 max_supply = 3000
 max_price_eth = 50
 ```
+
+### Linear "Curve"
+
+A linear curve is pretty straight forward and was chosend for this implementation for ease of implementation but is probably the least exciting option.
+
+
+```python
+fig = plt.figure()
+
+curve_mod = 3
+
+def curve(x):
+    # plain linear pricing
+    return x * (max_price_eth / max_supply)
+
+def plot_points():
+    """Plot x,y points for a sigmoidal curve for NFT pricing"""
+    return [(x, curve(x)) for x in range(0, max_supply)]
+
+points = [[x, y] for x, y in plot_points()]
+
+ax = fig.add_subplot(1, 1, 1)
+ax.plot([x for x, _ in points], [y for _, y in points], color='tab:blue')
+
+plt.show()
+```
+
+
+    
+![png](docs/img/output_5_0.png)
+    
+
 
 ### Sigmoidal Bonding Curve
 
@@ -54,7 +86,7 @@ plt.show()
 
 
     
-![png](docs/img/output_5_0.png)
+![png](docs/img/output_7_0.png)
     
 
 
@@ -90,7 +122,7 @@ plt.show()
 
 
     
-![png](docs/img/output_7_0.png)
+![png](docs/img/output_9_0.png)
     
 
 
