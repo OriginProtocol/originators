@@ -1,4 +1,4 @@
-# Cart Quarter
+# The Originators
 
 An NFT collection of The Originators with dynamic mint and burn pricing.
 
