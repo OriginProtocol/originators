@@ -2,6 +2,8 @@
 
 An NFT collection of The Originators with dynamic mint and burn pricing.
 
+![Originators](docs/img/originators.png)
+
 ## Introduction
 
 Loosely inspired by [shopping cart rental locks](https://lakevoicenews.org/quarter-for-a-cart-the-real-reason-you-need-a-quarter-for-your-shopping-cart-at-aldi-80fbe9233809), NFT “rentals” (or sales with the option to burn) can be made by depositing tokens and receiving your NFT. Dynamic pricing seems to be a natural supply and demand regulator as well as being a method of asset pricing.  Giving the users the ability to burn the tokens for tokens also give the users options for reasonable refunds, resulting in less of a chance of buyers remorse while also allowing the token supply to naturally reduce if demand is reduced.
